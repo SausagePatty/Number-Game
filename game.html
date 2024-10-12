@@ -1,69 +1,104 @@
 <html> 
 	<head> 
 		<title>Number Game</title>
-		<style> 
-			table.center { 
-				margin-left: auto; 
-				margin-right: auto; 
-				border: 1px solid black; 
-				border-collapse: collapse; 
-				table-layout: fixed; 
-			} 
-			table.center tr td  {  
-				border: 1px solid black; 
-				border-collapse: collapse; 
-				width: 20px;
-			} 
-			table tr td a { 
-				display: block; 
-				text-decoration: none; 
-			} 
-			table th.heading{
-				background-color: #FFCBA5; 
-				font-weight: bold; 
-				font-size: 20px; 
-			} 
-
-			td.blue{
-				background-color: #DEEAF6;
+		<style>
+			/* Gradient background */
+			body {
+				background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+				background-size: 400% 400%;
+				animation: gradient 15s ease infinite;
+				height: 100vh;
+				margin: 0;
+				display: flex;
+				align-items: center;
+				justify-content: center;
 			}
-			table tr { 
-				font-size: 20px; 
-			} 
 
-			.bold{
+			@keyframes gradient {
+				0% {
+					background-position: 0% 50%;
+				}
+				50% {
+					background-position: 100% 50%;
+				}
+				100% {
+					background-position: 0% 50%;
+				}
+			}
+			table.center {
+				margin-left: auto;
+				margin-right: auto;
+				border: 2px solid #4B0082;
+				border-collapse: collapse;
+				table-layout: fixed;
+				background-color: #F8F8FF;
+			}
+			table.center tr td {
+				border: 2px solid #4B0082;
+				border-collapse: collapse;
+				width: 20px;
+			}
+			table tr td a {
+				display: block;
+				text-decoration: none;
+				color: #000000;
+			}
+			table th.heading {
+				background-color: #C9C9FF;
+				color: #000000;
+				font-weight: bold;
+				font-size: 22px;
+			}
+			td.blue {
+				background-color: #D5C6E0;
+			}
+			table tr {
+				font-size: 20px;
+			}
+			.bold {
 				font-weight: bold;
 			}
 			.nobold {
 				font-weight: normal;
 			}
-
-			table tr td.score { 
-				background-color: #F9E29C; 
-				font-weight: bold; 
-				font-size: 20px; 
-			} 
-			table tr.buttons { 
-				background-color: #98FF98; 
-			} 
-
-			#num1, #num2, #num3 { 
-				font-weight: bold; 
-				font-size: 50px; 
-				color: black; 
-			} 
-			span.special { 
-				color: red; 
-				font-weight: bold; 
+			table tr td.score {
+				background-color: #cfacbb;
+				font-weight: bold;
+				font-size: 20px;
+			}
+			table tr.buttons {
+				background-color: #bbcdbb;
+			}
+			#num1, #num2, #num3 {
+				font-weight: bold;
+				font-size: 50px;
+				color: #4B0082;
+			}
+			span.special {
+				color: #f46207;
+				font-weight: bold;
 				font-size: 30px;
-			} 	
-			span.chosen { 
-				color: black; 
-				font-size: 20px; 
-			} 
+			}
+			span.chosen {
+				color: #e37506;
+				font-size: 20px;
+			}
+			input[type="button"] {
+				background-color: #6e13af;
+				color: white;
+				font-size: 18px;
+				border: none;
+				padding: 10px 20px;
+				cursor: pointer;
+				border-radius: 8px;
+			}
+			input[type="button"]:hover {
+				background-color: #6A5ACD;
+			}
 		</style> 
 	</head> 
 	<body> 
+		<div class="d-flex flex-column justify-content-center w-100 h-100"></div>
 		<table width = 60% height = "250" class = "center">
 			<th colspan = "3" class = "heading"> Part 2: Game </th>
 			<tr>
